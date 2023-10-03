@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --background-color: #fff;
-    --text: #1c1c1c;
+    --dark: #1c1c1c;
+    --light: #f1f1f1;
     --primary: #a7e3fe;
+    --trans: all 0.3s ease;
 }
 
 * {
@@ -18,7 +20,7 @@ body {
     display: flex;
     min-height: 100vh;
     height: 100vh;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Noto Serif', serif;
     font-size: 100%;
     transition: all 0.3s ease;
 
@@ -37,8 +39,14 @@ body {
 /* All glassmorphism effect was created by website: css.glass */
 body .container {
     position: relative;
-    width: 90%;
+    display: flex;
+    flex-direction: column  ;
+    width: 80%;
     height: 90%;
+    padding: 24px;
+
+    justify-content: space-between;
+    align-items: center;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -47,6 +55,197 @@ body .container {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.container header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 10%;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--dark);
+}
+.container footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 5%;
+    border: 1px solid #000;
+}
+.container main {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+header span.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+header span.slogan {
+    font-size: 1.75rem;
+}
+
+/* Main */
+main .components-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 78%;
+    justify-content: space-between;
+    align-content: space-between;
+}
+main .library-image {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 20%;
+    padding: 0 8px;
+    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Components */
+.components-content .component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(50% - 8px);
+    width: calc(50% - 8px);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.component .glassmorphism-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    opacity: 0;
+}
+
+.component.overview {
+    background-image: url(../images/background_components/1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.component.history {
+    background-image: url(../images/background_components/2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.component.bmvn {
+    background-image: url(../images/background_components/3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.component.gallery {
+    background-image: url(../images/background_components/4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.component .title-text {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    z-index: 1;
+}
+.component .short-describe {
+    margin: 4px;
+    text-align: justify;
+    opacity: 0;
+    z-index: 1;
+}
+.component .see-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    padding: 0 24px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 8px 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    z-index: 1;
+}
+.component .see-more a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--light);
+    justify-content: space-between;
+    align-items: center;
+}
+.component .see-more a i {
+    border-left: 1px solid var(--light);
+    padding-left: 16px;
+}
+
+.component:hover .short-describe,
+.component:hover .see-more,
+.component:hover .glassmorphism-overlay {
+    opacity: 1;
+}
+
+/* Library */
+.library-image .list-image {
+    width: 100%;
+    height: 100%;
+}
+
+.library-image .list-image li {
+    list-style: none;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+.library-image .list-image li img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

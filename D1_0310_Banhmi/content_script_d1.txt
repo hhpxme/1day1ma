@@ -3,5 +3,5 @@
          - Banh mi Vietnam
          - Gallery
 Header: Title
-Body: Show all part and content
+Main: Show all part and content
 Footer: Music
